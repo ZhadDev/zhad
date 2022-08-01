@@ -10,6 +10,18 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+/*
+ *  Category Clase que define la entidad encargada de gestionar las categorias
+ *  @author John Jairo Arteaga Sanchez
+ *  @fecha 31/07/2022
+ *  Derechos reservados por Zhad
+ * 
+ * MODIFICACIONES A LA CLASE
+ * @fecha
+ * @author
+ * @cambios
+ */
+
 @Getter
 @Setter
 @Entity

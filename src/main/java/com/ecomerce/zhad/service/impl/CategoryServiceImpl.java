@@ -12,6 +12,19 @@ import com.ecomerce.zhad.entity.Category;
 import com.ecomerce.zhad.repository.CategoryRepository;
 import com.ecomerce.zhad.service.ICategoryService;
 
+/*
+ *  CategoryServiceImpl Clase  encargada de implementar
+ *  los servicios de la entidad de Categorias
+ *  @author John Jairo Arteaga Sanchez
+ *  @fecha 31/07/2022
+ *  Derechos reservados por Zhad
+ * 
+ * MODIFICACIONES A LA CLASE
+ * @fecha
+ * @author
+ * @cambios
+ */
+
 @Service
 public class CategoryServiceImpl implements ICategoryService {
 
@@ -21,6 +34,15 @@ public class CategoryServiceImpl implements ICategoryService {
     @Autowired
     CategoryMapper categoryMapper;
 
+    /*
+     * @name createUpdateCategory
+     * 
+     * @description metodo encargado de crear y actualizar una categoria
+     * 
+     * @param{entidadDto} se le ingresa el dto de categoria
+     * 
+     * @return regresar el dto creado
+     */
     @Override
     public CategoryDto createUpdateCategory(CategoryDto categoryDto) {
         if (categoryDto.getId() == 0) {
@@ -37,6 +59,15 @@ public class CategoryServiceImpl implements ICategoryService {
         return categoryDto;
     }
 
+    /*
+     * @name searchCategory
+     * 
+     * @description metodo encargado de buscar una categoria
+     * 
+     * @param{id} se le ingresa el id de la categoria
+     * 
+     * @return regresar el dto buscado
+     */
     @Override
     public CategoryDto searchCategory(Integer Id) {
         CategoryDto categoryDto = new CategoryDto();
@@ -47,6 +78,15 @@ public class CategoryServiceImpl implements ICategoryService {
         return categoryDto;
     }
 
+    /*
+     * @name listCategory
+     * 
+     * @description metodo encargado de listar las categorias
+     * 
+     * @param{} no recibe parametro
+     * 
+     * @return regresa una lista de dtos de la entidad de categorias
+     */
     @Override
     public List<CategoryDto> listCategory() {
         List<CategoryDto> categoryDtos = new ArrayList<>();
@@ -56,6 +96,13 @@ public class CategoryServiceImpl implements ICategoryService {
         return categoryDtos;
     }
 
+    /*
+     * @name deleteCategory
+     * 
+     * @description metodo encargado de eliminar una categoria
+     * 
+     * @param{id} id de la categoria a eliminar
+     */
     @Override
     public void deleteCategory(Integer Id) {
         categoryRepository.deleteById(Id);
